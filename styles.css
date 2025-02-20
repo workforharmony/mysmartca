@@ -50,22 +50,25 @@ header p {
     margin-top: 30px;
 }
 
+/* Button Styles */
 button {
-    padding: 15px 25px;
+    padding: 15px 20px;
     font-size: 1.1rem;
     color: white;
-    background-color: #00d4ff; /* Updated button color */
+    background-color: #000000; /* Black buttons */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 220px;
+    width: 250px; /* Consistent width for all buttons */
     min-height: 60px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    white-space: pre-wrap;
 }
 
 button:hover {
-    background-color: #00aacc; /* Darker hover effect */
+    background-color: #333333; /* Darker hover effect */
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
@@ -103,52 +106,27 @@ input[type="text"] {
 }
 
 button.send-button {
-    background-color: #00d4ff;
-    color: #333;
+    background-color: #000000;
+    color: white;
+    font-size: 1rem;
 }
 
 button.send-button:hover {
-    background-color: #00aacc;
-}
-
-/* Message Styles */
-.user-message {
-    color: #333;
-    margin: 5px 0;
-    text-align: right;
-    word-wrap: break-word;
-}
-
-.bot-message {
-    color: #007bff;
-    margin: 5px 0;
-    text-align: left;
-    word-wrap: break-word;
+    background-color: #333333;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    header h1 {
-        font-size: 2.4rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-}
-
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
 
     header p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     button {
-        font-size: 1rem;
-        width: 200px;
+        width: 200px; /* Ensure uniform size on tablets */
     }
 }
 
@@ -158,13 +136,11 @@ button.send-button:hover {
     }
 
     header p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     button {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        width: 100%;
+        width: 100%; /* Full-width buttons on mobile */
     }
 
     .chat-container {
