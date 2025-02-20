@@ -38,7 +38,7 @@ async function sendMessage() {
         chatWindow.innerHTML += `
             <div class="bot-message">
                 <span class="message-icon">📕</span>
-                <span>SmartCA: ${formatBotMessage(botMessage)}</span>
+                <div class="bot-text">SmartCA: ${formatBotMessage(botMessage)}</div>
             </div>`;
 
         chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to the latest message
@@ -48,19 +48,80 @@ async function sendMessage() {
         chatWindow.innerHTML += `
             <div class="bot-message">
                 <span class="message-icon">📕</span>
-                <span>SmartCA: Oops! Something went wrong. Please try again.</span>
+                <div class="bot-text">SmartCA: Oops! Something went wrong. Please try again.</div>
             </div>`;
     }
 }
 
-// Function to format the bot's message with support for bullet points and lists
+// Function to format the bot's message with support for bullet points and subtopics
 function formatBotMessage(message) {
-    // Convert new lines to <br> and handle basic bullet points and numbered lists
-    return message
-        .replace(/\n/g, '<br>')
-        .replace(/•\s/g, '<li>') // Convert bullets (•) to list items
-        .replace(/(\d+\.)\s/g, '<li>') // Convert numbered lists (1., 2., ...) to list items
-        .replace(/<\/li><br>/g, '</li>') // Clean up unnecessary <br> after list items
-        .replace(/<br><li>/g, '<ul><li>') // Wrap list items in <ul> tags
-        .replace(/<\/li>(?!<li>)/g, '</li></ul>'); // Close <ul> properly
+    // Split the message into lines based on newline characters
+    const lines = message.split('\n');
+    let html = '';
+    let listItems = [];
+    let currentListOrdered = null; // null means not in a list yet
+
+    // Helper function to flush the current list items into an HTML list
+    function flushList() {
+        if (listItems.length > 0) {
+            if (currentListOrdered === true) {
+                html += '<ol>';
+                listItems.forEach(item => {
+                    html += `<li>${item}</li>`;
+                });
+                html += '</ol>';
+            } else if (currentListOrdered === false) {
+                html += '<ul>';
+                listItems.forEach(item => {
+                    html += `<li>${item}</li>`;
+                });
+                html += '</ul>';
+            }
+            listItems = [];
+            currentListOrdered = null;
+        }
+    }
+
+    lines.forEach(line => {
+        const trimmed = line.trim();
+        if (trimmed.startsWith('•')) {
+            // Unordered list item
+            if (currentListOrdered === null) {
+                currentListOrdered = false;
+            } else if (currentListOrdered === true) {
+                // If previously in an ordered list, flush it first.
+                flushList();
+                currentListOrdered = false;
+            }
+            // Remove the bullet and extra spaces
+            listItems.push(trimmed.substring(1).trim());
+        } else if (/^\d+\./.test(trimmed)) {
+            // Ordered list item
+            if (currentListOrdered === null) {
+                currentListOrdered = true;
+            } else if (currentListOrdered === false) {
+                flushList();
+                currentListOrdered = true;
+            }
+            listItems.push(trimmed);
+        } else if (trimmed === "") {
+            // Empty line: flush any existing list and add a break
+            flushList();
+            html += '<br>';
+        } else {
+            // Non-list text: flush any list first
+            flushList();
+            // If the line ends with a colon, treat it as a subheading
+            if (trimmed.endsWith(':')) {
+                html += `<h4>${trimmed}</h4>`;
+            } else {
+                html += `<p>${trimmed}</p>`;
+            }
+        }
+    });
+
+    // Flush any remaining list items
+    flushList();
+
+    return html;
 }
