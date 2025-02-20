@@ -226,7 +226,7 @@ textarea#userInput {
 }
 
 .bot-message li {
-  margin-bottom: 6px; /* More consistent spacing between list items */
+  margin-bottom: 2.5px; /* More consistent spacing between list items */
 }
 
 /* Make list markers bold (for ordered lists and bullets) */
