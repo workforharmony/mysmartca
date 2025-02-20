@@ -147,8 +147,14 @@ button:hover {
     color: #666;
 }
 
+/* Align bot icon at the start of the message */
+.bot-message .message-icon {
+    align-self: flex-start;
+}
+
 /* Input Box */
-input[type="text"] {
+/* For multi-line input, change your HTML input to a textarea with class "chat-input" */
+textarea.chat-input {
     padding: 10px;
     border: 2px solid #cccccc;
     border-radius: 5px;
@@ -173,8 +179,8 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s;
     width: 120px;
-    align-self: center; /* Center aligned */
-    margin-top: 10px;
+    display: block;      /* Ensures block-level behavior */
+    margin: 10px auto;   /* Centers the button */
 }
 
 .send-button:hover {
@@ -182,7 +188,9 @@ input[type="text"] {
 }
 
 /* Bullet Points and Numbered Lists in GPT Messages */
-.bot-message ul, .bot-message ol {
+.bot-message ul, 
+.bot-message ol {
+    list-style-position: inside;
     padding-left: 20px;
     margin: 10px 0;
 }
