@@ -79,7 +79,7 @@ button:hover {
     margin: 10px 0;
     color: #000; /* Full black text */
     text-align: center;
-    background-color: white;
+    background-color: #f0f0f0; /* Light gray background */
     padding: 8px;
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -119,28 +119,30 @@ button:hover {
     gap: 10px;
     margin: 8px 0;
     word-wrap: break-word;
-    padding: 8px;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    max-width: 90%;
 }
 
 .user-message {
-    background-color: #e0e0e0;
+    background-color: #f5f5f5; /* Lighter gray */
     justify-content: flex-end;
 }
 
 .bot-message {
-    background-color: #d1ecf1;
-    color: #007bff;
+    background-color: #e6f2ff; /* Very light blue */
     justify-content: flex-start;
+    color: #333;
 }
 
 /* Message Icons */
 .message-icon {
     font-size: 1.5rem;
+    color: #888;
 }
 
-/* Input and Send Button */
+/* Input Box */
 input[type="text"] {
     padding: 10px;
     border: 2px solid #cccccc;
@@ -152,6 +154,7 @@ input[type="text"] {
     overflow-y: auto;
     line-height: 1.5;
     white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* Send Button */
@@ -173,25 +176,7 @@ input[type="text"] {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-}
-
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.4rem;
-    }
-
-    header p {
-        font-size: 0.8rem;
-    }
-
     .button-container {
         grid-template-columns: repeat(2, 1fr);
     }
