@@ -152,20 +152,18 @@ button:hover {
   align-self: flex-start;
 }
 
-/* Input Box - Updated for textarea to allow text wrapping without changing the original size */
+/* Textarea for multi-line input with text wrapping and a bigger default height */
 textarea#userInput {
   padding: 10px;
   border: 2px solid #cccccc;
   border-radius: 5px;
-  flex: 1;
   width: 100%;
-  min-height: 60px;       /* Keeps the original height */
-  max-height: 150px;      /* Limits the height when text overflows */
-  resize: vertical;       /* Allow vertical resizing */
-  overflow-y: auto;
+  height: 120px;          /* Larger default height so it's clearly visible */
+  resize: vertical;       /* Allow vertical resizing if user wants more space */
+  overflow-y: auto;       /* Scroll vertically if content exceeds height */
   line-height: 1.5;
   white-space: pre-wrap;  /* Ensures text wraps automatically */
-  word-wrap: break-word;
+  word-wrap: break-word;  /* Breaks long words */
 }
 
 /* Send Button */
@@ -203,7 +201,6 @@ textarea#userInput {
   .button-container {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .chat-container {
     width: 95%;
   }
