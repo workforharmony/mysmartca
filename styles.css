@@ -123,14 +123,17 @@ button:hover {
     border-radius: 8px;
     border: 1px solid #ddd;
     max-width: 90%;
+    overflow-wrap: break-word;
 }
 
+/* User Message Styles */
 .user-message {
     background-color: #f5f5f5;
     justify-content: flex-end;
     margin-left: auto;
 }
 
+/* SmartCA GPT Message Styles */
 .bot-message {
     background-color: #e6f2ff;
     justify-content: flex-start;
@@ -154,6 +157,7 @@ input[type="text"] {
     min-height: 60px;
     resize: none;
     overflow-y: auto;
+    overflow-x: hidden;
     line-height: 1.5;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -169,12 +173,22 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s;
     width: 120px;
-    align-self: center;
+    align-self: center; /* Center aligned */
     margin-top: 10px;
 }
 
 .send-button:hover {
     background-color: #333333;
+}
+
+/* Bullet Points and Numbered Lists in GPT Messages */
+.bot-message ul, .bot-message ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.bot-message li {
+    margin-bottom: 5px;
 }
 
 /* Responsive Design */
