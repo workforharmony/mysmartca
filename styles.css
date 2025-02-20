@@ -77,9 +77,9 @@ button:hover {
 #selectedCategory {
     font-size: 1.2rem;
     margin: 10px 0;
-    color: #000; /* Full black text */
+    color: #000;
     text-align: center;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f0f0f0;
     padding: 8px;
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -119,7 +119,7 @@ button:hover {
     gap: 10px;
     margin: 10px 0;
     word-wrap: break-word;
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
     max-width: 90%;
@@ -128,14 +128,17 @@ button:hover {
 .user-message {
     background-color: #f5f5f5;
     justify-content: flex-end;
+    margin-left: auto;
 }
 
 .bot-message {
     background-color: #e6f2ff;
-    color: #333;
     justify-content: flex-start;
+    margin-right: auto;
+    color: #333;
 }
 
+/* Message Icons */
 .message-icon {
     font-size: 1.5rem;
     color: #666;
@@ -166,7 +169,7 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s;
     width: 120px;
-    align-self: center; /* Center alignment */
+    align-self: center;
     margin-top: 10px;
 }
 
