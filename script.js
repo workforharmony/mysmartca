@@ -10,8 +10,7 @@ function selectCategory(category) {
 
 // Send Message to Vercel API
 async function sendMessage() {
-  // We are now grabbing the value from id="myTextarea"
-  const userInput = document.getElementById("myTextarea").value.trim();
+  const userInput = document.getElementById("userInput").value.trim();
   const chatWindow = document.getElementById("chatWindow");
 
   if (!userInput) return; // Avoid empty messages
@@ -23,7 +22,7 @@ async function sendMessage() {
       <span>You: ${userInput}</span>
     </div>`;
 
-  document.getElementById("myTextarea").value = ""; // Clear input field
+  document.getElementById("userInput").value = ""; // Clear input field
 
   try {
     const response = await fetch("/api/openai", {
