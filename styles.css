@@ -44,13 +44,13 @@ header p {
 /* MAIN & MOBILE SPACING */
 /* --------------------------------- */
 main {
-  margin-top: 100px; /* Ensures content doesn't hide behind the fixed header */
+  margin-top: 150px; /* Ensures content doesn't hide behind the fixed header */
 }
 
 /* Extra top margin on very small screens to avoid header overlap */
 @media (max-width: 480px) {
   main {
-    margin-top: 140px;
+    margin-top: 150px;
   }
 }
 
