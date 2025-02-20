@@ -8,7 +8,8 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background-color: pink !important;
+ /* background-color: #f9f9f9 */
   color: #333;
   display: flex;
   flex-direction: column;
