@@ -13,7 +13,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 80px; /* Space for fixed header */
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -26,6 +27,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 header h1 {
@@ -49,7 +51,7 @@ header p {
 }
 
 button {
-    padding: 15px 25px;
+    padding: 15px 20px;
     font-size: 1rem;
     color: white;
     background-color: #007bff;
@@ -57,7 +59,9 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 200px;
+    width: 220px; /* Ensures buttons are the same width */
+    min-height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
@@ -122,23 +126,6 @@ button.send-button:hover {
     word-wrap: break-word;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-footer a {
-    color: #00d4ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
     header h1 {
@@ -147,10 +134,6 @@ footer a:hover {
 
     header p {
         font-size: 1rem;
-    }
-
-    button {
-        font-size: 0.9rem;
     }
 }
 
@@ -164,11 +147,8 @@ footer a:hover {
     }
 
     button {
-        min-width: 150px;
-    }
-
-    .chat-container {
-        width: 90%;
+        font-size: 0.9rem;
+        width: 200px; /* Ensure uniform size on tablets */
     }
 }
 
@@ -184,5 +164,10 @@ footer a:hover {
     button {
         padding: 10px 15px;
         font-size: 0.8rem;
+        width: 100%; /* Full-width buttons on mobile */
+    }
+
+    .chat-container {
+        width: 90%;
     }
 }
