@@ -176,7 +176,7 @@ button:hover {
 .message-icon {
   font-size: 1.5rem;
   color: #666;
-  align-items: center;
+  align-self: center;
 }
 
 /* --------------------------------- */
