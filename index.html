@@ -3,25 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartCA GPT</title>
+    <title>SmartCA GPT - Your Financial Advisor</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="SmartCA GPT offers tailored advice on Accounting & Budgeting, Investing & Wealth, Legal & Compliance, and Business & Company topics. Get accurate and relevant answers directly on our site.">
 </head>
 <body>
     <header>
         <h1>SmartCA GPT</h1>
-        <p>Your go-to assistant for financial guidance and business insights!</p>
+        <p>Get expert guidance on financial and business topics. Select a category to get started!</p>
     </header>
 
     <main>
-        <div class="cta-container">
-            <a href="https://chat.openai.com/g/smartca-gpt" target="_blank" class="cta-button">
-                Open SmartCA GPT
-            </a>
+        <!-- Category Buttons -->
+        <div class="button-container">
+            <button onclick="selectCategory('Accounting & Budgeting')">Accounting & Budgeting</button>
+            <button onclick="selectCategory('Investing & Wealth')">Investing & Wealth</button>
+            <button onclick="selectCategory('Legal & Compliance')">Legal & Compliance</button>
+            <button onclick="selectCategory('Business & Company')">Business & Company</button>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="chat-container" style="display:none;">
+            <h2 id="selectedCategory"></h2>
+            <div id="chatWindow" class="chat-window"></div>
+            <input type="text" id="userInput" placeholder="Ask your question..." />
+            <button onclick="sendMessage()">Send</button>
         </div>
     </main>
 
     <footer>
-        <p>Powered by SmartCA GPT | <a href="https://chat.openai.com" target="_blank">Visit OpenAI</a></p>
+        <p>Powered by SmartCA GPT | <a href="https://platform.openai.com" target="_blank">OpenAI</a></p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
