@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 80px; /* Space for fixed header */
+    padding-top: 100px; /* Space for fixed header */
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@ body {
 header {
     background-color: #007bff;
     color: white;
-    padding: 20px;
+    padding: 30px 20px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,7 +31,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
 }
 
@@ -44,28 +44,28 @@ header p {
 .button-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 40px 20px;
+    margin-top: 30px;
 }
 
 button {
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 15px 25px;
+    font-size: 1.1rem;
     color: white;
-    background-color: #007bff;
+    background-color: #00d4ff; /* Updated button color */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 220px; /* Ensures buttons are the same width */
-    min-height: 50px;
+    width: 220px;
+    min-height: 60px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00aacc; /* Darker hover effect */
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
@@ -108,7 +108,7 @@ button.send-button {
 }
 
 button.send-button:hover {
-    background-color: #00b8cc;
+    background-color: #00aacc;
 }
 
 /* Message Styles */
@@ -129,7 +129,7 @@ button.send-button:hover {
 /* Responsive Design */
 @media (max-width: 1024px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     header p {
@@ -139,7 +139,7 @@ button.send-button:hover {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     header p {
@@ -147,14 +147,14 @@ button.send-button:hover {
     }
 
     button {
-        font-size: 0.9rem;
-        width: 200px; /* Ensure uniform size on tablets */
+        font-size: 1rem;
+        width: 200px;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     header p {
@@ -162,9 +162,9 @@ button.send-button:hover {
     }
 
     button {
-        padding: 10px 15px;
-        font-size: 0.8rem;
-        width: 100%; /* Full-width buttons on mobile */
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        width: 100%;
     }
 
     .chat-container {
