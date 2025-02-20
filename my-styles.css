@@ -1,1 +1,209 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
 
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px; /* Space for fixed header */
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Button Container */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Category Buttons */
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #000000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  min-height: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+button:hover {
+  background-color: #333333;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Label */
+#selectedCategory {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #000;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Chat Container */
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Chat Window */
+.chat-window {
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+/* Message Styles */
+.user-message, .bot-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  word-wrap: break-word;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  max-width: 90%;
+  overflow-wrap: break-word;
+}
+
+/* User Message Styles */
+.user-message {
+  background-color: #f5f5f5;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+/* SmartCA GPT Message Styles */
+.bot-message {
+  background-color: #e6f2ff;
+  justify-content: flex-start;
+  margin-right: auto;
+  color: #333;
+}
+
+/* Message Icons */
+.message-icon {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Align bot icon at the start of the message */
+.bot-message .message-icon {
+  align-self: flex-start;
+}
+
+/* Textarea for multi-line input with text wrapping and a bigger default height */
+textarea#userInput {
+  padding: 10px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 60px;          /* Larger default height so it's clearly visible */
+  resize: vertical;       /* Allow vertical resizing if user wants more space */
+  overflow-y: auto;       /* Scroll vertically if content exceeds height */
+  line-height: 1.5;
+  white-space: pre-wrap;  /* Ensures text wraps automatically */
+  word-wrap: break-word;  /* Breaks long words */
+}
+
+/* Send Button */
+.send-button {
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 120px;
+  display: block;
+  margin: 10px auto;
+}
+
+.send-button:hover {
+  background-color: #333333;
+}
+
+/* Bullet Points and Numbered Lists in GPT Messages */
+.bot-message ul, 
+.bot-message ol {
+  list-style-position: inside;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.bot-message li {
+  margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .button-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chat-container {
+    width: 95%;
+  }
+}
