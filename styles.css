@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ body {
 header {
     background-color: #007bff;
     color: white;
-    padding: 30px 20px;
+    padding: 20px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,28 +31,28 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
 /* Button Container */
 .button-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
     justify-content: center;
-    padding: 40px 20px;
-    margin-top: 30px;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 /* Category Buttons */
 button {
-    padding: 15px 20px;
+    padding: 10px 15px;
     font-size: 1rem;
     color: white;
     background-color: #000000;
@@ -60,8 +60,8 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 250px;
-    min-height: 60px;
+    width: 100%;
+    min-height: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     white-space: pre-wrap;
@@ -76,12 +76,13 @@ button:hover {
 /* Category Label */
 #selectedCategory {
     font-size: 1.2rem;
-    margin: 15px 0;
-    color: #555; /* Neutral color */
+    margin: 10px 0;
+    color: #000; /* Full black text */
     text-align: center;
-    background-color: #e0e0e0;
-    padding: 10px;
+    background-color: white;
+    padding: 8px;
     border-radius: 8px;
+    border: 1px solid #ddd;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -91,13 +92,13 @@ button:hover {
 .chat-container {
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     background: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 /* Chat Window */
@@ -108,7 +109,7 @@ button:hover {
     padding: 10px;
     height: 300px;
     overflow-y: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Message Styles */
@@ -116,11 +117,11 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 10px 0;
+    margin: 8px 0;
     word-wrap: break-word;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ddd;
 }
 
 .user-message {
@@ -150,42 +151,52 @@ input[type="text"] {
     resize: none;
     overflow-y: auto;
     line-height: 1.5;
+    white-space: pre-wrap;
 }
 
 /* Send Button */
 .send-button {
-    padding: 8px 20px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-    display: block;
-    margin: 10px auto 0 auto;
-    width: 100px;
-    text-align: center;
+    width: 120px;
+    align-self: center;
+    margin-top: 10px;
 }
 
 .send-button:hover {
-    background-color: #0056b3;
+    background-color: #333333;
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     header p {
         font-size: 0.9rem;
     }
+}
 
-    button {
-        width: 100%;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .button-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .chat-container {
-        width: 90%;
+        width: 95%;
     }
 }
