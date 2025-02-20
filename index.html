@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartCA - Your Financial Advisor</title>
-    <link rel="stylesheet" href="my-styles.css">
-    <meta name="description" content="SmartCA GPT offers tailored advice on Accounting & Budgeting, Investing & Wealth, Legal & Compliance, and Business & Company topics. Get accurate and relevant answers directly on our site.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCA - Your Financial Advisor</title>
+  <!-- We renamed the CSS file to avoid caching issues -->
+  <link rel="stylesheet" href="my-styles.css">
+  <meta name="description" content="SmartCA GPT offers tailored advice on Accounting & Budgeting, Investing & Wealth, Legal & Compliance, and Business & Company topics. Get accurate and relevant answers directly on our site.">
 </head>
 <body>
-    <header>
-        <h1>My Smart CA</h1>
-        <p>Get expert guidance on financial and business topics. Select a category to get started!</p>
-    </header>
+  <header>
+    <h1>My Smart CA</h1>
+    <p>Get expert guidance on financial and business topics. Select a category to get started!</p>
+  </header>
 
-    <main>
-        <!-- Category Buttons -->
-        <div class="button-container">
-            <button onclick="selectCategory('Accounting & Budgeting')">Accounting & Budgeting</button>
-            <button onclick="selectCategory('Investing & Wealth')">Investing & Wealth</button>
-            <button onclick="selectCategory('Legal & Compliance')">Legal & Compliance</button>
-            <button onclick="selectCategory('Business & Company')">Business & Company</button>
-        </div>
+  <main>
+    <!-- Category Buttons -->
+    <div class="button-container">
+      <button onclick="selectCategory('Accounting & Budgeting')">Accounting & Budgeting</button>
+      <button onclick="selectCategory('Investing & Wealth')">Investing & Wealth</button>
+      <button onclick="selectCategory('Legal & Compliance')">Legal & Compliance</button>
+      <button onclick="selectCategory('Business & Company')">Business & Company</button>
+    </div>
 
-        <!-- Chat Interface -->
-        <div class="chat-container" style="display:none;">
-            <h2 id="selectedCategory"></h2>
-            <div id="chatWindow" class="chat-window"></div>
-            <input type="text" id="userInput" placeholder="Ask your question..." />
-            <button class="send-button" onclick="sendMessage()">Send</button>
-        </div>
-    </main>
+    <!-- Chat Interface -->
+    <div class="chat-container" style="display:none;">
+      <h2 id="selectedCategory"></h2>
+      <div id="chatWindow" class="chat-window"></div>
 
-    <script src="script.js"></script>
+      <!-- IMPORTANT: This is a TEXTAREA (not an input) with a unique ID -->
+      <textarea id="myTextarea" placeholder="Ask your question..."></textarea>
+
+      <button class="send-button" onclick="sendMessage()">Send</button>
+    </div>
+  </main>
+
+  <!-- Updated script reference -->
+  <script src="script.js"></script>
 </body>
 </html>
