@@ -98,7 +98,7 @@ button:hover {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 /* Chat Window */
@@ -117,29 +117,28 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin: 8px 0;
+    margin: 10px 0;
     word-wrap: break-word;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     border: 1px solid #ddd;
     max-width: 90%;
 }
 
 .user-message {
-    background-color: #f5f5f5; /* Lighter gray */
+    background-color: #f5f5f5;
     justify-content: flex-end;
 }
 
 .bot-message {
-    background-color: #e6f2ff; /* Very light blue */
-    justify-content: flex-start;
+    background-color: #e6f2ff;
     color: #333;
+    justify-content: flex-start;
 }
 
-/* Message Icons */
 .message-icon {
     font-size: 1.5rem;
-    color: #888;
+    color: #666;
 }
 
 /* Input Box */
@@ -167,7 +166,7 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s;
     width: 120px;
-    align-self: center;
+    align-self: center; /* Center alignment */
     margin-top: 10px;
 }
 
