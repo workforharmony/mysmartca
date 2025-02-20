@@ -148,7 +148,7 @@ button:hover {
 .user-message,
 .bot-message {
   display: flex;
-  align-items: centre; /* Align text/icons at the centre */
+  align-items: flex-start; /* Align text/icons at the centre */
   gap: 10px;
   margin: 10px 0;
   word-wrap: break-word;
@@ -176,7 +176,7 @@ button:hover {
 .message-icon {
   font-size: 1.5rem;
   color: #666;
-  align-self: center;
+  align-self: flex-start;
 }
 
 /* --------------------------------- */
