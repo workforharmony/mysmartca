@@ -31,7 +31,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
@@ -53,7 +53,7 @@ header p {
 /* Category Buttons */
 button {
     padding: 15px 20px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: white;
     background-color: #000000;
     border: none;
@@ -75,10 +75,16 @@ button:hover {
 
 /* Category Label */
 #selectedCategory {
-    font-size: 1.8rem;
-    margin: 20px 0;
-    color: #007bff;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #555; /* Neutral color */
     text-align: center;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Chat Container */
@@ -91,44 +97,44 @@ button:hover {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 /* Chat Window */
 .chat-window {
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border: 2px solid #cccccc;
     border-radius: 8px;
     padding: 10px;
     height: 300px;
     overflow-y: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* Message Styles */
 .user-message, .bot-message {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     margin: 10px 0;
     word-wrap: break-word;
     padding: 10px;
     border-radius: 8px;
+    border: 1px solid #cccccc;
 }
 
 .user-message {
     background-color: #e0e0e0;
-    text-align: left;
     justify-content: flex-end;
 }
 
 .bot-message {
     background-color: #d1ecf1;
-    text-align: left;
-    justify-content: flex-start;
     color: #007bff;
+    justify-content: flex-start;
 }
 
+/* Message Icons */
 .message-icon {
     font-size: 1.5rem;
 }
@@ -136,24 +142,29 @@ button:hover {
 /* Input and Send Button */
 input[type="text"] {
     padding: 10px;
-    border: 1px solid #dddddd;
+    border: 2px solid #cccccc;
     border-radius: 5px;
     flex: 1;
     width: 100%;
-    min-height: 50px;
+    min-height: 60px;
     resize: none;
     overflow-y: auto;
+    line-height: 1.5;
 }
 
+/* Send Button */
 .send-button {
-    padding: 10px 15px;
+    padding: 8px 20px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-    margin-left: 10px;
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 100px;
+    text-align: center;
 }
 
 .send-button:hover {
