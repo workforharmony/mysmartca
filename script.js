@@ -19,7 +19,8 @@ async function sendMessage() {
   chatWindow.innerHTML += `
     <div class="user-message">
       <span class="message-icon">🤔</span>
-      <span>You: ${userInput}</span>
+      <!-- "You" in bold -->
+      <span><strong>You:</strong> ${userInput}</span>
     </div>`;
 
   document.getElementById("userInput").value = ""; // Clear input field
@@ -34,11 +35,13 @@ async function sendMessage() {
     const data = await response.json();
     const botMessage = data.message || "Sorry, I didn't understand that.";
 
-    // Display the bot's response in the chat window with 📕 emoji and 'SmartCA' name
+    // Display the bot's response with SmartCA in bold and a line break
     chatWindow.innerHTML += `
       <div class="bot-message">
         <span class="message-icon">📕</span>
-        <div class="bot-text">SmartCA: ${formatBotMessage(botMessage)}</div>
+        <div class="bot-text">
+          <strong>SmartCA:</strong><br><br>${formatBotMessage(botMessage)}
+        </div>
       </div>`;
 
     chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to the latest message
@@ -48,7 +51,9 @@ async function sendMessage() {
     chatWindow.innerHTML += `
       <div class="bot-message">
         <span class="message-icon">📕</span>
-        <div class="bot-text">SmartCA: Oops! Something went wrong. Please try again.</div>
+        <div class="bot-text">
+          <strong>SmartCA:</strong><br><br>Oops! Something went wrong. Please try again.
+        </div>
       </div>`;
   }
 }
@@ -84,6 +89,7 @@ function formatBotMessage(message) {
 
   lines.forEach(line => {
     const trimmed = line.trim();
+
     if (trimmed.startsWith('•')) {
       // Unordered list item
       if (currentListOrdered === null) {
@@ -95,8 +101,9 @@ function formatBotMessage(message) {
       }
       // Remove the bullet (•) and extra spaces
       listItems.push(trimmed.substring(1).trim());
+
     } else if (/^\d+\./.test(trimmed)) {
-      // Ordered list item
+      // Ordered list item (e.g., "1.", "2.", "1.1")
       if (currentListOrdered === null) {
         currentListOrdered = true;
       } else if (currentListOrdered === false) {
@@ -104,10 +111,12 @@ function formatBotMessage(message) {
         currentListOrdered = true;
       }
       listItems.push(trimmed);
+
     } else if (trimmed === "") {
       // Empty line: flush any existing list and add a break
       flushList();
       html += '<br>';
+
     } else {
       // Non-list text: flush any list first
       flushList();
